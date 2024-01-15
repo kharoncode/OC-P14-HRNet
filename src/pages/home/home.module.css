@@ -1,5 +1,31 @@
 .container {
-   display: flex;
-   justify-content: center;
+   width: 100%;
    padding: 20px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.formContainer {
+   width: 100%;
+   max-width: 500px;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.subContainer {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.subContainerItems {
+   width: 100%;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
 }
