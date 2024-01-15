@@ -7,6 +7,7 @@
    justify-content: center;
    background-color: #785df3;
    color: white;
+   box-shadow: 1px 0px 6px 3px #7e8888;
 }
 
 .menu {
