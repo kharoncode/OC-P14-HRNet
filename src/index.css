@@ -10,8 +10,10 @@
 
 main {
    width: 100%;
-   margin-left: 270px;
    padding: 20px;
+   background-color: white;
+   border-radius: 25px;
+   overflow-y: scroll;
 }
 
 a {
