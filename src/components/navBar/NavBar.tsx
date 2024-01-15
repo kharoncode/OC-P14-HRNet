@@ -3,7 +3,7 @@ import styles from './navBar.module.css';
 import addEmployeeIcone from '@assets/icones/userPlus.svg';
 import employeeList from '@assets/icones/users.svg';
 
-const NavBar = ({ children }) => {
+const NavBar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
    return (
       <div className={styles.container}>
          <nav className={styles.menu}>
