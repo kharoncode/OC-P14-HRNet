@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styles from './home.module.css';
 import type { FormEvent } from 'react';
 import states from '@/utils/states';
