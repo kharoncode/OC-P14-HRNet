@@ -10,7 +10,9 @@
 
 main {
    width: 100%;
-   padding: 20px;
+   padding: 30px 20px;
+   display: flex;
+   justify-content: center;
    background-color: white;
    border-radius: 25px;
    overflow-y: scroll;

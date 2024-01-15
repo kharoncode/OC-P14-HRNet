@@ -51,55 +51,72 @@ const Home = () => {
          >
             <div className={styles.subContainer}>
                <div className={styles.subContainerItems}>
-                  <label htmlFor="firstName">First Name</label>
-                  <input type="text" id="firstName" />
-                  <label htmlFor="lastName">Last Name</label>
-                  <input type="text" id="lastName" />
-                  {/* // DATE PICKER */}
-                  <label htmlFor="dateOfBirth">Date of Birth</label>
-                  <input id="dateOfBirth" type="text" />
-                  {/* // DATE PICKER */}
-                  <label htmlFor="startDate">Start Date</label>
-                  <input id="startDate" type="text" />
+                  <h3>Profile</h3>
+                  <div className={styles.inputContainer}>
+                     <label htmlFor="firstName">First Name</label>
+                     <input type="text" id="firstName" />
+                  </div>
+                  <div className={styles.inputContainer}>
+                     <label htmlFor="lastName">Last Name</label>
+                     <input type="text" id="lastName" />
+                  </div>
+                  <div className={styles.inputContainer}>
+                     {/* // DATE PICKER */}
+                     <label htmlFor="dateOfBirth">Date of Birth</label>
+                     <input id="dateOfBirth" type="text" />
+                  </div>
+                  <div className={styles.inputContainer}>
+                     {/* // DATE PICKER */}
+                     <label htmlFor="startDate">Start Date</label>
+                     <input id="startDate" type="text" />
+                  </div>
                </div>
                <div className={styles.subContainerItems}>
-                  <legend>Address</legend>
-                  <label htmlFor="street">Street</label>
-                  <input id="street" type="text" />
-                  <label htmlFor="city">City</label>
-                  <input id="city" type="text" />
-                  <label htmlFor="state">State</label>
-                  {/*  // DROPDOWN-MENU */}
-                  <select name="state" id="state">
-                     {states.map((el) => (
-                        <option
-                           key={`${el.abbreviation}-option`}
-                           value={el.abbreviation}
-                        >
-                           {el.name}
-                        </option>
-                     ))}
-                  </select>
-                  <label htmlFor="zipCode">Zip Code</label>
-                  <input id="zipCode" type="number" />
+                  <h3>Address</h3>
+                  <div className={styles.inputContainer}>
+                     <label htmlFor="street">Street</label>
+                     <input id="street" type="text" />
+                  </div>
+                  <div className={styles.inputContainer}>
+                     <label htmlFor="city">City</label>
+                     <input id="city" type="text" />
+                  </div>
+                  <div className={styles.inputContainer}>
+                     {/*  // DROPDOWN-MENU */}
+                     <label htmlFor="state">State</label>
+                     <select name="state" id="state">
+                        {states.map((el) => (
+                           <option
+                              key={`${el.abbreviation}-option`}
+                              value={el.abbreviation}
+                           >
+                              {el.name}
+                           </option>
+                        ))}
+                     </select>
+                  </div>
+                  <div className={styles.inputContainer}>
+                     <label htmlFor="zipCode">Zip Code</label>
+                     <input id="zipCode" type="number" />
+                  </div>
                </div>
             </div>
-            <label htmlFor="department">Department</label>
-            <select name="department" id="department">
-               <option>Sales</option>
-               <option>Marketing</option>
-               <option>Engineering</option>
-               <option>Human Resources</option>
-               <option>Legal</option>
-            </select>
-            <button type="submit" className={styles.button}>
-               Save
-            </button>
+            <div className={styles.inputContainer}>
+               <label htmlFor="department">Department</label>
+               <select name="department" id="department">
+                  <option>Sales</option>
+                  <option>Marketing</option>
+                  <option>Engineering</option>
+                  <option>Human Resources</option>
+                  <option>Legal</option>
+               </select>
+            </div>
+            <input type="submit" value="save" className={styles.button} />
          </form>
          {/* // MODALE */}
-         <div id="confirmation" className="modal">
+         {/* <div id="confirmation" className="modal">
             Employee Created!
-         </div>
+         </div> */}
       </div>
    );
 };
