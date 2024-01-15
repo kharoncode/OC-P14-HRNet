@@ -44,7 +44,7 @@ const Home = () => {
 
    return (
       <div className={styles.container}>
-         <h2>Create Employee</h2>
+         <h1>Create Employee</h1>
          <form
             className={styles.formContainer}
             onSubmit={(e) => handleSubmit(e)}

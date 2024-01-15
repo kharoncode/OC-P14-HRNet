@@ -5,10 +5,11 @@
    display: flex;
    align-items: center;
    flex-direction: column;
-   border-radius: 25px;
-   color: #303030;
-   background-color: #f4f4fe;
-   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.container h1 {
+   color: #5955b3;
+   margin-bottom: 40px;
 }
 
 .container h3 {
@@ -23,6 +24,10 @@
    align-items: center;
    flex-direction: column;
    gap: 5px;
+   border-radius: 25px;
+   color: #303030;
+   background-color: #f4f4fe;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
 .subContainer {
