@@ -13,6 +13,7 @@
    width: 100%;
    color: white;
    justify-content: center;
+   margin-top: 35px;
 }
 
 .container a.title:hover {

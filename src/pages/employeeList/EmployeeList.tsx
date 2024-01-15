@@ -3,7 +3,8 @@ import styles from './employeeList.module.css';
 const EmployeeList = () => {
    return (
       <div className={styles.container}>
-         <h2>Current Employees</h2>
+         <h1>Current Employees</h1>
+         <div className={styles.tabContainer}></div>
       </div>
    );
 };
