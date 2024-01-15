@@ -4,20 +4,21 @@
    padding: 10px;
    display: flex;
    justify-content: center;
-   background-color: #5955b3;
-   color: white;
+   background-color: var(--primary-color);
+   color: var(--secondary-color);
 }
 
 .container a.title {
    padding: 10px 0 10px 0;
    width: 100%;
-   color: white;
+   font-size: 1.5em;
+   color: var(--secondary-color);
    justify-content: center;
    margin-top: 35px;
 }
 
 .container a.title:hover {
-   color: white;
+   color: var(--secondary-color);
 }
 
 .menu {
@@ -35,19 +36,18 @@
    position: relative;
    display: flex;
    align-items: center;
-   color: #9e9dd3;
+   color: var(--tertiary-color);
 }
 
 .menu img {
    width: 20px;
    height: 20px;
    margin-right: 20px;
-   filter: invert(70%) sepia(88%) saturate(506%) hue-rotate(192deg)
-      brightness(89%) contrast(83%);
+   filter: var(--tertiary-filter);
 }
 
 .menu a:hover {
-   color: #ffffff;
+   color: var(--secondary-color);
 }
 
 .menu a:hover img {
@@ -60,13 +60,13 @@
    width: 15px;
    height: 30px;
    border-radius: 15px 0 0 15px;
-   background-color: rgb(255, 255, 255);
+   background-color: var(--secondary-color);
 }
 
 .active img {
-   filter: brightness(0) invert(1);
+   filter: var(--secondary-filter);
 }
 
 .menu a.active {
-   color: #ffffff;
+   color: var(--secondary-color);
 }

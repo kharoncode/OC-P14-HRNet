@@ -24,6 +24,15 @@
    font-family: 'Roboto', sans-serif;
 }
 
+:root {
+   --primary-color: #5955b3;
+   --secondary-color: #fff;
+   --secondary-filter: brightness(0) invert(1);
+   --tertiary-filter: invert(70%) sepia(88%) saturate(506%) hue-rotate(192deg)
+      brightness(89%) contrast(83%);
+   --tertiary-color: #9e9dd3;
+}
+
 #root {
    display: flex;
 }

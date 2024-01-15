@@ -7,7 +7,7 @@
 }
 
 .container h1 {
-   color: #5955b3;
+   color: var(--primary-color);
    margin-bottom: 40px;
 }
 
