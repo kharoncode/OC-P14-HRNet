@@ -1,0 +1,51 @@
+.container {
+   position: fixed;
+   width: 260px;
+   height: 100%;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   background-color: #785df3;
+   color: white;
+}
+
+.menu {
+   position: relative;
+   width: 100%;
+   padding-left: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+   font-size: 0.9em;
+   font-weight: 700;
+}
+
+.menu a {
+   display: flex;
+   color: #ffffff;
+}
+
+.menu img {
+   width: 20px;
+   height: 20px;
+   margin-right: 20px;
+   filter: brightness(0) invert(1);
+}
+
+.menu a:hover {
+   color: #fcd183;
+}
+
+.menu a:hover img {
+   filter: invert(92%) sepia(6%) saturate(6968%) hue-rotate(310deg)
+      brightness(124%) contrast(98%);
+}
+
+.active div {
+   position: absolute;
+   left: 0;
+   width: 8px;
+   height: 20px;
+   border-radius: 0 3px 3px 0;
+   background-color: rgb(255, 255, 255);
+}
