@@ -1,4 +1,4 @@
-import styles from './home.module.css';
+import styles from './createEmployee.module.css';
 import type { FormEvent } from 'react';
 import states from '@/utils/states';
 
@@ -14,7 +14,7 @@ type employee = {
    zipCode: number;
 };
 
-const Home = () => {
+const CreateEmployee = () => {
    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const firstName = e.currentTarget.firstName.value;
@@ -121,4 +121,4 @@ const Home = () => {
    );
 };
 
-export default Home;
+export default CreateEmployee;
