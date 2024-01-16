@@ -26,7 +26,6 @@ export const createEmployeeSlice = createSlice({
          const newEmployee = action.payload;
          const newList = [...state.employeeList];
          newList.push(newEmployee);
-         console.log(newList);
          return { ...state, employeeList: newList };
       },
    },
