@@ -23,9 +23,11 @@ export const createEmployeeSlice = createSlice({
    initialState,
    reducers: {
       addEmployee: (state, action) => {
-         const newList = { ...state };
-         newList.employeeList.push(action.payload);
-         return newList;
+         const newEmployee = action.payload;
+         const newList = [...state.employeeList];
+         newList.push(newEmployee);
+         console.log(newList);
+         return { ...state, employeeList: newList };
       },
    },
 });

@@ -1,18 +1,8 @@
 import styles from './createEmployee.module.css';
 import type { FormEvent } from 'react';
 import states from '@/utils/states';
-
-type employee = {
-   firstName: string;
-   lastName: string;
-   dateOfBirth: string;
-   startDate: string;
-   department: string;
-   street: string;
-   city: string;
-   state: string;
-   zipCode: number;
-};
+import { createEmployeeSlice, type employee } from './createEmployeeSlice';
+import { store } from '@/router/store';
 
 const CreateEmployee = () => {
    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -39,7 +29,7 @@ const CreateEmployee = () => {
          zipCode: zipCode,
       };
 
-      console.log(employee);
+      store.dispatch(createEmployeeSlice.actions.addEmployee(employee));
    };
 
    return (
