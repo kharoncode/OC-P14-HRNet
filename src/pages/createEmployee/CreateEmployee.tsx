@@ -28,10 +28,9 @@ const CreateEmployee = () => {
          state: state,
          zipCode: zipCode,
       };
-
       store.dispatch(createEmployeeSlice.actions.addEmployee(employee));
+      e.currentTarget.reset();
    };
-
    return (
       <div className={styles.container}>
          <h1>Create Employee</h1>
@@ -44,32 +43,32 @@ const CreateEmployee = () => {
                   <h3>Profile</h3>
                   <div className={styles.inputContainer}>
                      <label htmlFor="firstName">First Name</label>
-                     <input type="text" id="firstName" />
+                     <input type="text" id="firstName" required />
                   </div>
                   <div className={styles.inputContainer}>
                      <label htmlFor="lastName">Last Name</label>
-                     <input type="text" id="lastName" />
+                     <input type="text" id="lastName" required />
                   </div>
                   <div className={styles.inputContainer}>
                      {/* // DATE PICKER */}
                      <label htmlFor="dateOfBirth">Date of Birth</label>
-                     <input id="dateOfBirth" type="text" />
+                     <input id="dateOfBirth" type="text" required />
                   </div>
                   <div className={styles.inputContainer}>
                      {/* // DATE PICKER */}
                      <label htmlFor="startDate">Start Date</label>
-                     <input id="startDate" type="text" />
+                     <input id="startDate" type="text" required />
                   </div>
                </div>
                <div className={styles.subContainerItems}>
                   <h3>Address</h3>
                   <div className={styles.inputContainer}>
                      <label htmlFor="street">Street</label>
-                     <input id="street" type="text" />
+                     <input id="street" type="text" required />
                   </div>
                   <div className={styles.inputContainer}>
                      <label htmlFor="city">City</label>
-                     <input id="city" type="text" />
+                     <input id="city" type="text" required />
                   </div>
                   <div className={styles.inputContainer}>
                      {/*  // DROPDOWN-MENU */}
@@ -87,7 +86,7 @@ const CreateEmployee = () => {
                   </div>
                   <div className={styles.inputContainer}>
                      <label htmlFor="zipCode">Zip Code</label>
-                     <input id="zipCode" type="number" />
+                     <input id="zipCode" type="number" required />
                   </div>
                </div>
             </div>
