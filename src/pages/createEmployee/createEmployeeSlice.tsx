@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export type employee = {
+   id: string;
    firstName: string;
    lastName: string;
    dateOfBirth: string;

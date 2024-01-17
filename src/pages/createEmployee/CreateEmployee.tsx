@@ -1,5 +1,5 @@
 import styles from './createEmployee.module.css';
-import type { FormEvent } from 'react';
+import { type FormEvent } from 'react';
 import states from '@/utils/states';
 import { createEmployeeSlice, type employee } from './createEmployeeSlice';
 import { store } from '@/router/store';
@@ -18,6 +18,7 @@ const CreateEmployee = () => {
       const zipCode = e.currentTarget.zipCode.value;
 
       const employee: employee = {
+         id: `${lastName}_${Date.now().toString()}`,
          firstName: firstName,
          lastName: lastName,
          dateOfBirth: dateOfBirth,
