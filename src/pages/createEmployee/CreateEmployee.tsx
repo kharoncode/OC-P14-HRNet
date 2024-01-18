@@ -4,12 +4,14 @@ import states from '@/utils/states';
 import { createEmployeeSlice, type employee } from './createEmployeeSlice';
 import { store } from '@/router/store';
 import DatePicker from 'react-datepicker';
+import Select from 'react-dropdown-select';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
 const CreateEmployee = () => {
    const [startDate, setStartDate] = useState(new Date());
    const [birthDate, setBirthDate] = useState(new Date());
+   const [selectedState, setSelectedState] = useState('');
 
    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -20,7 +22,7 @@ const CreateEmployee = () => {
       const department = e.currentTarget.department.value;
       const street = e.currentTarget.street.value;
       const city = e.currentTarget.city.value;
-      const state = e.currentTarget.state.value;
+      const state = selectedState;
       const zipCode = e.currentTarget.zipCode.value;
 
       const employee: employee = {
@@ -57,7 +59,6 @@ const CreateEmployee = () => {
                      <input type="text" id="lastName" required />
                   </div>
                   <div className={styles.inputContainer}>
-                     {/* // DATE PICKER */}
                      <label htmlFor="dateOfBirth">Date of Birth</label>
                      <DatePicker
                         showIcon
@@ -67,7 +68,6 @@ const CreateEmployee = () => {
                      />
                   </div>
                   <div className={styles.inputContainer}>
-                     {/* // DATE PICKER */}
                      <label htmlFor="startDate">Start Date</label>
                      <DatePicker
                         showIcon
@@ -89,8 +89,9 @@ const CreateEmployee = () => {
                   </div>
                   <div className={styles.inputContainer}>
                      {/*  // DROPDOWN-MENU */}
+
                      <label htmlFor="state">State</label>
-                     <select name="state" id="state">
+                     {/* <select name="state" id="state">
                         {states.map((el) => (
                            <option
                               key={`${el.abbreviation}-option`}
@@ -99,7 +100,22 @@ const CreateEmployee = () => {
                               {el.name}
                            </option>
                         ))}
-                     </select>
+                     </select> */}
+                     <Select
+                        values={[]}
+                        options={states}
+                        placeholder="Select your state"
+                        labelField="name"
+                        valueField="abbreviation"
+                        searchBy="name"
+                        color="#5955b3"
+                        dropdownPosition="auto"
+                        dropdownHeight="300px"
+                        required
+                        onChange={(values) =>
+                           setSelectedState(values[0].abbreviation)
+                        }
+                     />
                   </div>
                   <div className={styles.inputContainer}>
                      <label htmlFor="zipCode">Zip Code</label>
