@@ -1,16 +1,22 @@
 import styles from './createEmployee.module.css';
-import { type FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import states from '@/utils/states';
 import { createEmployeeSlice, type employee } from './createEmployeeSlice';
 import { store } from '@/router/store';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 const CreateEmployee = () => {
+   const [startDate, setStartDate] = useState(new Date());
+   const [birthDate, setBirthDate] = useState(new Date());
+
    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const firstName = e.currentTarget.firstName.value;
       const lastName = e.currentTarget.lastName.value;
-      const dateOfBirth = e.currentTarget.dateOfBirth.value;
-      const startDate = e.currentTarget.startDate.value;
+      const dateOfBirth = birthDate.toLocaleDateString();
+      const dateOfStartDate = startDate.toLocaleDateString();
       const department = e.currentTarget.department.value;
       const street = e.currentTarget.street.value;
       const city = e.currentTarget.city.value;
@@ -22,7 +28,7 @@ const CreateEmployee = () => {
          firstName: firstName,
          lastName: lastName,
          dateOfBirth: dateOfBirth,
-         startDate: startDate,
+         startDate: dateOfStartDate,
          department: department,
          street: street,
          city: city,
@@ -53,12 +59,22 @@ const CreateEmployee = () => {
                   <div className={styles.inputContainer}>
                      {/* // DATE PICKER */}
                      <label htmlFor="dateOfBirth">Date of Birth</label>
-                     <input id="dateOfBirth" type="text" required />
+                     <DatePicker
+                        showIcon
+                        id="dateOfBirth"
+                        selected={birthDate}
+                        onChange={(date: Date) => setBirthDate(date)}
+                     />
                   </div>
                   <div className={styles.inputContainer}>
                      {/* // DATE PICKER */}
                      <label htmlFor="startDate">Start Date</label>
-                     <input id="startDate" type="text" required />
+                     <DatePicker
+                        showIcon
+                        id="startDate"
+                        selected={startDate}
+                        onChange={(date: Date) => setStartDate(date)}
+                     />
                   </div>
                </div>
                <div className={styles.subContainerItems}>
