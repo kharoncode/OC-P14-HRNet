@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import styles from './employeeList.module.css';
 import { getEmployeeList } from '@/router/selectors';
 //import { DataBase } from 'hrnet-database';
-import { DataBase } from '../../../../../packages/oc-p14-dataBase/src/packages/DataBase/DataBase';
+import { DataBase } from '../../../../../packages/hrnet-packages/src/packages/DataBase/DataBase';
 
 const EmployeeList = () => {
    const employeeList = useSelector(getEmployeeList);

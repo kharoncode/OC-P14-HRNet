@@ -7,9 +7,10 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-dropdown-select';
 
-import { Modal } from '../../../../../packages/oc-p14-dataBase/src/packages/Modal/Modal';
+import { Modal } from '../../../../../packages/hrnet-packages/src/packages/Modal/Modal';
 
 const CreateEmployee = () => {
+   const [modalOpen, setModalOpen] = useState(false);
    const [startDate, setStartDate] = useState(new Date());
    const [birthDate, setBirthDate] = useState(new Date());
    const [selectedState, setSelectedState] = useState([
@@ -176,11 +177,9 @@ const CreateEmployee = () => {
             </div>
             <input type="submit" value="save" className={styles.button} />
          </form>
-         <Modal />
          {/* // MODALE */}
-         {/* <div id="confirmation" className="modal">
-            Employee Created!
-         </div> */}
+         <Modal open={modalOpen} setOpen={setModalOpen} />
+         <button onClick={(e)=>setModalOpen(true)}>Open Modal</button>
       </div>
    );
 };
