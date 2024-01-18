@@ -7,6 +7,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-dropdown-select';
 
+import { Modal } from '../../../../../packages/oc-p14-dataBase/src/packages/Modal/Modal';
+
 const CreateEmployee = () => {
    const [startDate, setStartDate] = useState(new Date());
    const [birthDate, setBirthDate] = useState(new Date());
@@ -116,7 +118,7 @@ const CreateEmployee = () => {
                      <Select
                         values={[]}
                         options={states}
-                        placeholder="Select your state"
+                        placeholder="Your state"
                         labelField="name"
                         valueField="abbreviation"
                         searchBy="name"
@@ -155,7 +157,7 @@ const CreateEmployee = () => {
                      { name: 'Human Resources' },
                      { name: 'Legal' },
                   ]}
-                  placeholder="Select"
+                  placeholder="Your department"
                   labelField="name"
                   valueField="name"
                   searchBy="name"
@@ -174,6 +176,7 @@ const CreateEmployee = () => {
             </div>
             <input type="submit" value="save" className={styles.button} />
          </form>
+         <Modal />
          {/* // MODALE */}
          {/* <div id="confirmation" className="modal">
             Employee Created!
