@@ -1,8 +1,20 @@
 import { useSelector } from 'react-redux';
 import styles from './employeeList.module.css';
 import { getEmployeeList } from '@/router/selectors';
-//import { DataBase } from 'hrnet-database';
+//import { DataTable } from 'hrnet-database';
 import { DataTable } from '../../../../../packages/hrnet-packages/src/packages/DataTable/DataTable';
+
+const columns = [
+   { title: 'First Name', data: 'firstName' },
+   { title: 'Last Name', data: 'lastName' },
+   { title: 'Start Date', data: 'startDate' },
+   { title: 'Department', data: 'department' },
+   { title: 'Date of Birth', data: 'dateOfBirth' },
+   { title: 'Street', data: 'street' },
+   { title: 'City', data: 'city' },
+   { title: 'State', data: 'state' },
+   { title: 'Zip Code', data: 'zipCode' },
+];
 
 const EmployeeList = () => {
    const employeeList = useSelector(getEmployeeList);
@@ -10,7 +22,7 @@ const EmployeeList = () => {
       <div className={styles.container}>
          <h1>Current Employees</h1>
          <div className={styles.tabContainer}>
-            <DataTable employeeList={employeeList} />
+            <DataTable data={employeeList} columns={columns} />
          </div>
       </div>
    );
