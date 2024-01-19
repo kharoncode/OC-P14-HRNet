@@ -1455,13 +1455,14 @@ hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1:
   dependencies:
     react-is "^16.7.0"
 
-hrnet-database@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/hrnet-database/-/hrnet-database-1.0.4.tgz#b8937239b4deecd58c9eb22a5a517e61712fe552"
-  integrity sha512-2K/YOJ+tTYrUgBsv7kQwcjeDBaQxVy2ezFO9O/rugGB71EahzmEb5A3xPl+qXHU9GDOlStX+okWou5RvhDuipg==
+hrnet-packages@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/hrnet-packages/-/hrnet-packages-1.0.6.tgz#cee5752f7f26c8353a6ece3b71045c2ddbabc8f0"
+  integrity sha512-AIx3xEnDZSCn5AQkB7oj1/FvEcPORWZ3mho5GgatZ309k/zO3dKsXCCAfTrrBoWVe5U5Pf6FhXGgpI4ccDZeKA==
   dependencies:
     react "^18.2.0"
     react-dom "^18.2.0"
+    styled-components "^6.1.8"
     vite-plugin-dts "^3.7.1"
 
 ignore@^5.2.0, ignore@^5.2.4:

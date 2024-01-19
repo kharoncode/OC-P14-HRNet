@@ -6,8 +6,7 @@ import { store } from '@/router/store';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-dropdown-select';
-
-import { Modal } from '../../../../../packages/hrnet-packages/src/packages/Modal/Modal';
+import { Modal } from 'hrnet-packages';
 
 const CreateEmployee = () => {
    const [modalOpen, setModalOpen] = useState(false);
@@ -44,6 +43,7 @@ const CreateEmployee = () => {
       };
       store.dispatch(createEmployeeSlice.actions.addEmployee(employee));
       e.currentTarget.reset();
+      setModalOpen(true);
    };
    return (
       <div className={styles.container}>
@@ -177,9 +177,9 @@ const CreateEmployee = () => {
             </div>
             <input type="submit" value="save" className={styles.button} />
          </form>
-         {/* // MODALE */}
-         <Modal open={modalOpen} setOpen={setModalOpen} />
-         <button onClick={(e)=>setModalOpen(true)}>Open Modal</button>
+         <Modal open={modalOpen} setOpen={setModalOpen}>
+            <div>Employee Created !</div>
+         </Modal>
       </div>
    );
 };
