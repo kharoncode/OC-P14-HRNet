@@ -6,7 +6,8 @@ import { store } from '@/router/store';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-dropdown-select';
-import { Modal } from 'hrnet-packages';
+//import { Modal } from 'hrnet-packages';
+import { Modal } from '../../../../../packages/hrnet-packages/src/packages/Modal/Modal';
 
 const CreateEmployee = () => {
    const [modalOpen, setModalOpen] = useState(false);
