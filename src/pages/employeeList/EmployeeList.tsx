@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import styles from './employeeList.module.css';
-import { getEmployeeList } from '@/router/selectors';
+import { DataTable } from '../../../../../packages/hrnet-packages/src/index';
+import { getEmployeeList } from '@/router/selector';
 //import { DataTable } from 'hrnet-packages';
-import { DataTable } from '../../../../../packages/hrnet-packages/src/packages/DataTable/DataTable';
 
 const columns = [
    { title: 'First Name', data: 'firstName' },

@@ -7,7 +7,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-dropdown-select';
 //import { Modal } from 'hrnet-packages';
-import { Modal } from '../../../../../packages/hrnet-packages/src/packages/Modal/Modal';
+import { Modal } from '../../../../../packages/hrnet-packages/src/index';
 
 const CreateEmployee = () => {
    const [modalOpen, setModalOpen] = useState(false);
@@ -187,6 +187,7 @@ const CreateEmployee = () => {
             </div>
             <input type="submit" value="save" className={styles.button} />
          </form>
+         <button onClick={() => setModalOpen(true)}>MODAL</button>
          <Modal open={modalOpen} setOpen={setModalOpen}>
             <div>Employee Created !</div>
          </Modal>
