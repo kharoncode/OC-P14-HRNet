@@ -80,6 +80,11 @@ const CreateEmployee = () => {
                         showIcon
                         id="dateOfBirth"
                         selected={birthDate}
+                        peekNextMonth
+                        showMonthDropdown
+                        showYearDropdown
+                        maxDate={new Date()}
+                        dropdownMode="select"
                         onChange={(date: Date) => setBirthDate(date)}
                      />
                   </div>
@@ -90,6 +95,10 @@ const CreateEmployee = () => {
                         showIcon
                         id="startDate"
                         selected={startDate}
+                        peekNextMonth
+                        showMonthDropdown
+                        showYearDropdown
+                        dropdownMode="select"
                         onChange={(date: Date) => setStartDate(date)}
                      />
                   </div>
