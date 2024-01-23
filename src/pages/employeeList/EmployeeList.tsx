@@ -1,8 +1,9 @@
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import styles from './employeeList.module.css';
 import { DataTable } from '../../../../../packages/hrnet-packages/src/index';
-import { getEmployeeList } from '@/router/selector';
+//import { getEmployeeList } from '@/router/selector';
 //import { DataTable } from 'hrnet-packages';
+import { employeeList } from '../../../public/mock/employeeList';
 
 const columns = [
    { title: 'First Name', data: 'firstName' },
@@ -17,7 +18,7 @@ const columns = [
 ];
 
 const EmployeeList = () => {
-   const employeeList = useSelector(getEmployeeList);
+   //const employeeList = useSelector(getEmployeeList);
    return (
       <div className={styles.container}>
          <h1>Current Employees</h1>

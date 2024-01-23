@@ -28,7 +28,11 @@ const CreateEmployee = () => {
       const city = e.currentTarget.city.value;
       const state = selectedState;
       const zipCode = e.currentTarget.zipCode.value;
-      const id = `${lastName}_${Date.now().toString()}`;
+      const id = `${lastName
+         .toLowerCase()
+         .replace(/'/g, '')
+         .normalize('NFD')
+         .replace(/[\u0300-\u036f]/g, '')}_${Date.now().toString()}`;
 
       const newEmployee: employee = {
          id: id,
