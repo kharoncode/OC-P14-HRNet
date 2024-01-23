@@ -13,10 +13,10 @@ export type employee = {
    zipCode: number;
 };
 
-export type employeeListState = { employeeList: employee[] };
+export type employeeListState = { employeeList: { [key: string]: employee } };
 
 const initialState: employeeListState = {
-   employeeList: [],
+   employeeList: {},
 };
 
 export const createEmployeeSlice = createSlice({
@@ -24,9 +24,8 @@ export const createEmployeeSlice = createSlice({
    initialState,
    reducers: {
       addEmployee: (state, action) => {
-         const newEmployee = action.payload;
-         const newList = [...state.employeeList];
-         newList.push(newEmployee);
+         const newList = { ...state.employeeList };
+         newList[action.payload.id] = action.payload.newEmployee;
          return { ...state, employeeList: newList };
       },
    },

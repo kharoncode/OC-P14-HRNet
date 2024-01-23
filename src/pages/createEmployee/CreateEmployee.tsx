@@ -28,9 +28,10 @@ const CreateEmployee = () => {
       const city = e.currentTarget.city.value;
       const state = selectedState;
       const zipCode = e.currentTarget.zipCode.value;
+      const id = `${lastName}_${Date.now().toString()}`;
 
-      const employee: employee = {
-         id: `${lastName}_${Date.now().toString()}`,
+      const newEmployee: employee = {
+         id: id,
          firstName: firstName,
          lastName: lastName,
          dateOfBirth: dateOfBirth,
@@ -41,7 +42,8 @@ const CreateEmployee = () => {
          state: state[0].abbreviation,
          zipCode: zipCode,
       };
-      store.dispatch(createEmployeeSlice.actions.addEmployee(employee));
+      const result = { id: id, newEmployee: newEmployee };
+      store.dispatch(createEmployeeSlice.actions.addEmployee(result));
       e.currentTarget.reset();
       setModalOpen(true);
    };
