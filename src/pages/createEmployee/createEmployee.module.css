@@ -63,6 +63,7 @@
    height: 36px;
    padding-left: 10px;
    border-radius: 5px;
+   outline: none;
 }
 
 .inputContainer label {
