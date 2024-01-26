@@ -15,15 +15,15 @@ const NavBar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
                className={({ isActive }) => (isActive ? styles.active : '')}
             >
                <div className={styles.after}></div>
-               <img src={addEmployeeIcone} alt="Create Employee" />
+               <img src={addEmployeeIcone} alt="Create" />
                <span>Create Employee</span>
             </NavLink>
             <NavLink
                className={({ isActive }) => (isActive ? styles.active : '')}
-               to="/employee-list"
+               to="/employeeList"
             >
                <div className={styles.after}></div>
-               <img src={employeeList} alt="Current Employees" />
+               <img src={employeeList} alt="List" />
                <span>Current Employees</span>
             </NavLink>
          </nav>
