@@ -9,7 +9,7 @@ import Select from 'react-dropdown-select';
 import { Modal } from 'hrnet-packages';
 
 const CreateEmployee = () => {
-   const [modalOpen, setModalOpen] = useState(false);
+   const [open, setOpen] = useState(false);
    const [startDate, setStartDate] = useState(new Date());
    const [birthDate, setBirthDate] = useState(new Date());
    const [selectedState, setSelectedState] = useState([
@@ -49,7 +49,7 @@ const CreateEmployee = () => {
       const result = { id: id, newEmployee: newEmployee };
       store.dispatch(createEmployeeSlice.actions.addEmployee(result));
       e.currentTarget.reset();
-      setModalOpen(true);
+      setOpen(true);
    };
    return (
       <div className={styles.container}>
@@ -192,7 +192,7 @@ const CreateEmployee = () => {
             </div>
             <input type="submit" value="save" className={styles.button} />
          </form>
-         <Modal open={modalOpen} setOpen={setModalOpen}>
+         <Modal open={open} setOpen={setOpen}>
             <div>Employee Created !</div>
          </Modal>
       </div>
