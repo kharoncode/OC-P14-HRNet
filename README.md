@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# HRNet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. General information
 
-Currently, two official plugins are available:
+This repository contains the Front-End from the authentication page of a banking application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 2. Project
 
-## Expanding the ESLint configuration
+### 2.1 Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-  [npm](https://www.npmjs.com/)
+-  [Git](https://git-scm.com/)
 
-- Configure the top-level `parserOptions` property like this:
+### 2.2 Dependencies
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-  [React](https://reactjs.org/) v18.2.0
+-  [react-router-dom](https://reactrouter.com/web/guides/quick-start) v6.21.3
+-  [react-redux](https://react-redux.js.org/) v9.1.0
+-  [redux](https://redux.js.org/) v5.0.1
+-  [redux-tooklkit](https://redux-toolkit.js.org/) v2.0.1
+-  [redux-persist](https://github.com/rt2zz/redux-persist) v6.0.0
+-  [react-dropdown-select](https://github.com/jedwatson/react-select) v4.11.1
+-  [react-datepicker](https://github.com/Hacker0x01/react-datepicker) v4.19.5
+-  [hrnet-packages](https://github.com/kharoncode/OC-P14-packages) v1.0.21
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 2.3 Launching the project
+
+-  Clone the repository
+
+   `https://github.com/kharoncode/OC-P14-HRNet.git`
+
+-  Move to the folder
+
+   `cd OC-P14-HRNet`
+
+-  Install the package
+
+   `npm install`
+
+-  Run the project
+
+   `npm run dev`
