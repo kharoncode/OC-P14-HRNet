@@ -2,7 +2,7 @@
 
 ## 1. General information
 
-This repository contains the Front-End from the authentication page of a banking application
+HRnet is an application that manages employee files. 
 
 ## 2. Project
 
