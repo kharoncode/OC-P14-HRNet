@@ -5,17 +5,23 @@ import { createEmployeeSlice, type employee } from './createEmployeeSlice';
 import { store } from '@/router/store';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Select from 'react-dropdown-select';
+import Select from 'react-select';
 import { Modal } from 'hrnet-packages';
+
+const departmentOption = [
+   { value: 'Sales', label: 'Sales' },
+   { value: 'Marketing', label: 'Marketing' },
+   { value: 'Engineering', label: 'Engineering' },
+   { value: 'Human Resources', label: 'Human Resources' },
+   { value: 'Legal', label: 'Legal' },
+];
 
 const CreateEmployee = () => {
    const [open, setOpen] = useState(false);
    const [startDate, setStartDate] = useState(new Date());
    const [birthDate, setBirthDate] = useState(new Date());
-   const [selectedState, setSelectedState] = useState([
-      { name: '', abbreviation: '' },
-   ]);
-   const [selectedDepartment, setSelectedDepartment] = useState([{ name: '' }]);
+   const [selectedState, setSelectedState] = useState('');
+   const [selectedDepartment, setSelectedDepartment] = useState('');
 
    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -40,10 +46,10 @@ const CreateEmployee = () => {
          lastName: lastName,
          dateOfBirth: dateOfBirth,
          startDate: dateOfStartDate,
-         department: department[0].name,
+         department: department,
          street: street,
          city: city,
-         state: state[0].abbreviation,
+         state: state,
          zipCode: zipCode,
       };
       const result = { id: id, newEmployee: newEmployee };
@@ -82,7 +88,7 @@ const CreateEmployee = () => {
                   <div className={styles.inputContainer}>
                      <label htmlFor="dateOfBirth">Date of Birth</label>
                      <DatePicker
-                        className={styles.input}
+                        className={`${styles.input} ${styles.inputDate}`}
                         showIcon
                         id="dateOfBirth"
                         selected={birthDate}
@@ -97,7 +103,7 @@ const CreateEmployee = () => {
                   <div className={styles.inputContainer}>
                      <label htmlFor="startDate">Start Date</label>
                      <DatePicker
-                        className={styles.input}
+                        className={`${styles.input} ${styles.inputDate}`}
                         showIcon
                         id="startDate"
                         selected={startDate}
@@ -130,25 +136,21 @@ const CreateEmployee = () => {
                      />
                   </div>
                   <div className={styles.inputContainer}>
-                     <label htmlFor="state">State</label>
+                     <label htmlFor="states_select">States</label>
                      <Select
-                        values={[]}
+                        inputId="states_select"
+                        className="basic-single"
+                        classNamePrefix="select"
+                        defaultValue={states[0]}
+                        isClearable={true}
+                        isSearchable={true}
+                        name="color"
                         options={states}
-                        placeholder="Your state"
-                        labelField="name"
-                        valueField="abbreviation"
-                        searchBy="name"
-                        color="#5955b3"
-                        style={{
-                           width: '180px',
-                           backgroundColor: 'white',
-                           paddingLeft: '10px',
-                           fontSize: '0.9em',
+                        onChange={(e) => {
+                           if (e) {
+                              setSelectedState(e.value);
+                           }
                         }}
-                        dropdownPosition="auto"
-                        dropdownHeight="300px"
-                        required
-                        onChange={(values) => setSelectedState(values)}
                      />
                   </div>
                   <div className={styles.inputContainer}>
@@ -163,31 +165,21 @@ const CreateEmployee = () => {
                </div>
             </div>
             <div className={styles.inputContainer}>
-               <label htmlFor="department">Department</label>
+               <label htmlFor="department_select">Department</label>
                <Select
-                  values={[]}
-                  options={[
-                     { name: 'Sales' },
-                     { name: 'Marketing' },
-                     { name: 'Engineering' },
-                     { name: 'Human Resources' },
-                     { name: 'Legal' },
-                  ]}
-                  placeholder="Your department"
-                  labelField="name"
-                  valueField="name"
-                  searchBy="name"
-                  color="#5955b3"
-                  style={{
-                     width: '180px',
-                     backgroundColor: 'white',
-                     paddingLeft: '10px',
-                     fontSize: '0.9em',
+                  inputId="department_select"
+                  className="basic-single"
+                  classNamePrefix="select"
+                  defaultValue={departmentOption[0]}
+                  isClearable={true}
+                  isSearchable={true}
+                  name="color"
+                  options={departmentOption}
+                  onChange={(e) => {
+                     if (e) {
+                        setSelectedDepartment(e.value);
+                     }
                   }}
-                  dropdownPosition="auto"
-                  dropdownHeight="300px"
-                  required
-                  onChange={(values) => setSelectedDepartment(values)}
                />
             </div>
             <input type="submit" value="save" className={styles.button} />
