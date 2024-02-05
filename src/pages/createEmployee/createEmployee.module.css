@@ -68,6 +68,15 @@
    outline: none;
 }
 
+.inputSelect {
+   border: solid 2px black;
+   border-radius: 5px;
+}
+
+.test {
+   outline: none;
+}
+
 .inputDate {
    text-align: center;
 }

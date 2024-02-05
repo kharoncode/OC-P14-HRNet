@@ -139,7 +139,7 @@ const CreateEmployee = () => {
                      <label htmlFor="states_select">States</label>
                      <Select
                         inputId="states_select"
-                        className="basic-single"
+                        className={styles.inputSelect}
                         classNamePrefix="select"
                         defaultValue={states[0]}
                         isClearable={true}
@@ -151,6 +151,7 @@ const CreateEmployee = () => {
                               setSelectedState(e.value);
                            }
                         }}
+                        required
                      />
                   </div>
                   <div className={styles.inputContainer}>
@@ -168,7 +169,7 @@ const CreateEmployee = () => {
                <label htmlFor="department_select">Department</label>
                <Select
                   inputId="department_select"
-                  className="basic-single"
+                  className={styles.inputSelect}
                   classNamePrefix="select"
                   defaultValue={departmentOption[0]}
                   isClearable={true}
@@ -180,6 +181,7 @@ const CreateEmployee = () => {
                         setSelectedDepartment(e.value);
                      }
                   }}
+                  required
                />
             </div>
             <input type="submit" value="save" className={styles.button} />
