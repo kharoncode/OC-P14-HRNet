@@ -25,12 +25,16 @@
 }
 
 :root {
-   --primary-color: #5955b3;
+   --primary-color: #4848a2;
+   --primary-filter: invert(31%) sepia(47%) saturate(1160%) hue-rotate(209deg)
+      brightness(89%) contrast(89%);
    --secondary-color: #fff;
    --secondary-filter: brightness(0) invert(1);
    --tertiary-filter: invert(70%) sepia(88%) saturate(506%) hue-rotate(192deg)
-      brightness(89%) contrast(83%);
-   --tertiary-color: #9e9dd3;
+      brightness(95%) contrast(83%);
+
+   --tertiary-color: color-mix(in srgb, var(--primary-color) 30%, white);
+   /* #9e9dd3; */
 }
 
 #root {

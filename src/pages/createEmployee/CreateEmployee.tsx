@@ -66,7 +66,7 @@ const CreateEmployee = () => {
          >
             <div className={styles.subContainer}>
                <div className={styles.subContainerItems}>
-                  <h3>Profile</h3>
+                  <h2>Profile</h2>
                   <div className={styles.inputContainer}>
                      <label htmlFor="firstName">First Name</label>
                      <input
@@ -116,7 +116,7 @@ const CreateEmployee = () => {
                   </div>
                </div>
                <div className={styles.subContainerItems}>
-                  <h3>Address</h3>
+                  <h2>Address</h2>
                   <div className={styles.inputContainer}>
                      <label htmlFor="street">Street</label>
                      <input
