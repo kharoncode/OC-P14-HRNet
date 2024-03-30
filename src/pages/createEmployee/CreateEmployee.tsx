@@ -20,8 +20,10 @@ const CreateEmployee = () => {
    const [open, setOpen] = useState(false);
    const [startDate, setStartDate] = useState(new Date());
    const [birthDate, setBirthDate] = useState(new Date());
-   const [selectedState, setSelectedState] = useState('');
-   const [selectedDepartment, setSelectedDepartment] = useState('');
+   const [selectedState, setSelectedState] = useState(states[0].value);
+   const [selectedDepartment, setSelectedDepartment] = useState(
+      departmentOption[0].value
+   );
 
    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -29,10 +31,8 @@ const CreateEmployee = () => {
       const lastName = e.currentTarget.lastName.value;
       const dateOfBirth = birthDate.toLocaleDateString();
       const dateOfStartDate = startDate.toLocaleDateString();
-      const department = selectedDepartment;
       const street = e.currentTarget.street.value;
       const city = e.currentTarget.city.value;
-      const state = selectedState;
       const zipCode = e.currentTarget.zipCode.value;
       const id = `${lastName
          .toLowerCase()
@@ -46,10 +46,10 @@ const CreateEmployee = () => {
          lastName: lastName,
          dateOfBirth: dateOfBirth,
          startDate: dateOfStartDate,
-         department: department,
+         department: selectedDepartment,
          street: street,
          city: city,
-         state: state,
+         state: selectedState,
          zipCode: zipCode,
       };
       const result = { id: id, newEmployee: newEmployee };
